@@ -1,0 +1,6 @@
+# git add <file>
+# git commit -m '<message for commit>'
+# git push origin
+
+# git add . -A
+# git commit -m 'removed some files'
