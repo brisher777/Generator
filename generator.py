@@ -1,8 +1,3 @@
-'''
-Created on 2013-04-09
-
-@author: ben
-'''
 import Tkinter
 import generator_defines
 import tkFileDialog

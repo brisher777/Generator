@@ -1,8 +1,3 @@
-'''
-Created on Feb 16, 2013
-
-@author: ben
-'''
 import random
 import hashlib
 
