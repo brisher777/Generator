@@ -1,5 +1,6 @@
 import random
 import hashlib
+import string
 
 class Password(object):
 	
@@ -36,13 +37,13 @@ class Password(object):
 	def gen_lowercase(self):
 		temp_list = []
 		for x in range(self.lowercase):
-			temp_list.append(chr(random.randint(97, 122)))
+			temp_list.append(random.choice(string.ascii_lowercase))
 		return ''.join(temp_list)
 	
 	def gen_uppercase(self):
 		temp_list = []
 		for x in range(self.uppercase):
-			temp_list.append(chr(random.randint(66, 90)))
+			temp_list.append(random.choice(string.ascii_uppercase))
 		return ''.join(temp_list)
 	
 	def gen_special(self):

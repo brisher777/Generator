@@ -43,14 +43,14 @@ class password_gui(Tkinter.Tk):
         
         ## check button 1
         self.checked_1 = Tkinter.IntVar()
-        self.check_button_1 = Tkinter.Checkbutton(text = "Uppercase", variable = self.checked_1, onvalue = 1, \
+        self.check_button_1 = Tkinter.Checkbutton(text = "Lowercase", variable = self.checked_1, onvalue = 1, \
                                                   offvalue = 0, command = lambda e = self.entry_1, \
                                                   v = self.checked_1: self.entry_check(e,v))
         self.check_button_1.grid(row = 0, column = 0, sticky = 'W')
         
         ## check button 2
         self.checked_2 = Tkinter.IntVar()                                          
-        self.check_button_2 = Tkinter.Checkbutton(text = "Lowercase", variable = self.checked_2, onvalue = 1, \
+        self.check_button_2 = Tkinter.Checkbutton(text = "Uppercase", variable = self.checked_2, onvalue = 1, \
                                                   offvalue = 0, command = lambda e = self.entry_2, \
                                                   v = self.checked_2: self.entry_check(e, v))
         self.check_button_2.grid(row = 1, column = 0, sticky = 'W')
