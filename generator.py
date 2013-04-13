@@ -133,7 +133,7 @@ class password_gui(Tkinter.Tk):
         self.password_obj = generator_defines.Password(self.entry_1.get(), self.entry_2.get(), \
                                                                 self.entry_3.get(), self.entry_4.get(), \
                                                                 self.entry_5.get(), self.entry_6.get())
-        self.generate_variable.set(self.password_obj.generate())
+        self.generate_variable.set(self.password_obj.password)
         
 
     ## sanity check on user input

@@ -33,7 +33,7 @@ class Password(object):
 					self.total_length -= 1
 				else:
 					break
-		self.generate()
+		self.password = self.generate()
 		
 	def generate(self):
 		
