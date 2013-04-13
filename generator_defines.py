@@ -34,6 +34,7 @@ class Password(object):
 				else:
 					break
 		self.password = self.generate()
+		self.hash = self.hash_it()
 		
 	def generate(self):
 		

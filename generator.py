@@ -116,7 +116,7 @@ class password_gui(Tkinter.Tk):
                                      state = 'disabled')
 
     def print_hash(self):
-        self.generate_variable.set(self.password_obj.hash_it())
+        self.generate_variable.set(self.password_obj.hash)
         
     ## is the check box checked or not?
     def entry_check(self, entry, checked):
