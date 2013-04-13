@@ -116,7 +116,7 @@ class password_gui(Tkinter.Tk):
                                      state = 'disabled')
 
     def print_hash(self):
-        self.generate_variable.set(self.sha_hash)
+        self.generate_variable.set(self.password_obj.hash_it())
         
     ## is the check box checked or not?
     def entry_check(self, entry, checked):
@@ -124,28 +124,17 @@ class password_gui(Tkinter.Tk):
             entry.configure(state = 'disabled')
         else:
             entry.configure(state = 'normal')
-            
+    
+      
     ## use generator_defines to build a Password object
     def generate(self):
         
         ## instantiate the object
-        password_obj = generator_defines.Password(self.entry_1.get(), self.entry_2.get(), \
+        self.password_obj = generator_defines.Password(self.entry_1.get(), self.entry_2.get(), \
                                                                 self.entry_3.get(), self.entry_4.get(), \
                                                                 self.entry_5.get(), self.entry_6.get())
+        self.generate_variable.set(self.password_obj.generate())
         
-        ## build a string using the functions provided
-        ## in generator_defines 
-        new_password = password_obj.gen_lowercase() + password_obj.gen_uppercase() + \
-                            password_obj.gen_special() + password_obj.gen_numbers()
-        
-        ## shuffle the string 
-        new_password = password_obj.mix_em_up(new_password)
-        
-        ## produce the sha1 hash to be used later
-        self.sha_hash = password_obj.hash_it(new_password)
-        
-        ## print the password
-        self.generate_variable.set(new_password)
 
     ## sanity check on user input
     ## only allows integers and limits

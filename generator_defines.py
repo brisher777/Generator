@@ -33,7 +33,21 @@ class Password(object):
 					self.total_length -= 1
 				else:
 					break
-					
+		self.generate()
+		
+	def generate(self):
+		
+		## build a string using the functions provided
+		## in generator_defines 
+		new_password = self.gen_lowercase() + self.gen_uppercase() + \
+							self.gen_special() + self.gen_numbers()
+		
+		## shuffle the string 
+		new_password = self.mix_em_up(new_password)
+		
+		## return the password
+		return new_password		
+				
 	def gen_lowercase(self):
 		temp_list = []
 		for x in range(self.lowercase):
@@ -71,8 +85,8 @@ class Password(object):
 		return final_string
 
 	## return a sha1 hash of the string
-	def hash_it(self, shuffled):
-		return hashlib.sha1(shuffled).hexdigest()
+	def hash_it(self):
+		return hashlib.sha1(self.generate()).hexdigest()
 	
 		
 		
